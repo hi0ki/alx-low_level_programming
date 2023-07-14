@@ -5,13 +5,11 @@
  */
 int main(void)
 {
-	char *sh = "_putchar";
+	char str[] = "_putchar";
+	int ch;
 
-	while (*sh)
-	{
-		_putchar(*sh);
-		sh++;
-	}
+	for (ch = 0; ch < 8; ch++)
+		_putchar(str[ch]);
 	_putchar('\n');
 
 	return (0);
