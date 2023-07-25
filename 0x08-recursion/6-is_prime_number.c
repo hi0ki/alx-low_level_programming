@@ -7,24 +7,26 @@
 */
 int is_prime_number(int n)
 {
-	int test = n / 2;
+	int start = n / 2;
 
 	if (n <= 1)
 		return (0);
-	return (checker_prime(n, test));
+	return (is_prime(n, start));
 }
 
 /**
-* checker_prime - returns the 1 if n is prime
+* is_prime - returns the 1 if n is prime
 * @n: number to be checked
-* @test: number to start checking from
+* @start: number to start checking from
 *
 * Return: 1 if n is prime, 0 otherwise
 */
 
-int checker_prime(int n, int test)
+int is_prime(int n, int start)
 {
-	if (n % test == 0)
+	if (start <= 1)
+		return (1);
+	else if (n % start == 0)
 		return (0);
-	return (checker_prime(n, test - 1));
+	return (is_prime(n, start - 1));
 }
