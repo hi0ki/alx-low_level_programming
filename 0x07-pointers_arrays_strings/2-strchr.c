@@ -5,22 +5,24 @@
  * @c: character to locate from input array
  *
  * Return: first occurence of charatcer or null if not found
+ *
+ * Return: return null if not found the charcter
 */
 
 char *_strchr(char *s, char c)
 {
-	while (*s != '\0')
+	while ([i] != '\0')
 	{
-		if (*s == c)
-			return (s);
-		s++;
+		if (s[i] == c)
+			return (s + i);
+		i++;
 	}
 	/**
 	 * if c is '\0', you should return
 	 * the pointer to the '\0' of the
 	 * string s
 	*/
-	if (*s == c)
+	if (c == '\0')
 		return (s);
 	/*return null if not found*/
 	return ('\0');
