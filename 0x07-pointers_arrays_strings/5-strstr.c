@@ -12,25 +12,25 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int	i;
-	int	x;
+	/**
+	 * we initialize a helping variable
+	 * to assist in returning one of
+	 * our parameters pointers haystack
+	*/
+	char *h, *n;
 
-	i = 0;
-	x = 0;
-	if (to_find[i] == '\0')
+	while (*haystack != '\0')
 	{
-		return (str);
-	}
-	while (str[x] != '\0')
-	{
-		i = 0;
-		while (str[x + i] == to_find[i])
+		h = haystack;
+		n = needle;
+		while (*n != '\0' && *haystack == *n)
 		{
-			i++;
-			if (to_find[i] == '\0')
-				return (str + x);
+			haystack++;
+			n++;
 		}
-		x++;
+		if (!*n)
+			return (h);
+		haystack++;
 	}
-	return (0);
+	return ('\0');
 }
