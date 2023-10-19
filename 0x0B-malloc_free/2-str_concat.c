@@ -33,14 +33,12 @@ char *str_concat(char *s1, char *s2)
 	char *dest;
 
 	i = 0;
-	y = ft_strlen(s1);
-	x = ft_strlen(s2);
-
 	if (s1 == NULL)
 		s1 = "\0";
 	if (s2 == NULL)
 		s2 = "\0";
-
+	y = ft_strlen(s1);
+	x = ft_strlen(s2);
 	dest = (char *)malloc((y + x) * sizeof(char) + 1);
 
 	if (dest == 0)
