@@ -41,19 +41,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
+	if (n >= ft_strlen(s2))
+		n = ft_strlen(s2);
 	str = malloc((ft_strlen(s1) + n) * sizeof(char) + 1);
 	if (str == NULL)
 		return (NULL);
-
-	if (n >= ft_strlen(s2))
-		n = ft_strlen(s2);
 
 	while (s1[i])
 	{
 		str[i] = s1[i];
 		i++;
 	}
-	while (x <= n && s2[x])
+	while (x < n && s2[x])
 	{
 		str[i] = s2[x];
 		i++;
