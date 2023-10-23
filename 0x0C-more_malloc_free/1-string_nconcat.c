@@ -31,7 +31,7 @@ int ft_strlen(char *str)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, x;
+	unsigned int i, x, z1, z2;
 	char *str;
 
 	i = 0;
@@ -41,18 +41,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	if (n >= ft_strlen(s2))
-		n = ft_strlen(s2);
-	str = malloc((ft_strlen(s1) + n) * sizeof(char) + 1);
+	z1 = ft_strlen(s1);
+	z2 = ft_strlen(s2);
+
+	if (n >= z2)
+		n = z2;
+	str = malloc((z1 + n) * sizeof(char) + 1);
 	if (str == NULL)
 		return (NULL);
 
-	while (s1[i])
+	while (s1[i] != '\0')
 	{
 		str[i] = s1[i];
 		i++;
 	}
-	while (x < n && s2[x])
+	while (x < n && s2[x] != '\0')
 	{
 		str[i] = s2[x];
 		i++;
